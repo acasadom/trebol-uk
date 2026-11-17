@@ -9,6 +9,14 @@
     "national-insurance",
     "validation"
   ],
+  "homepage": "https://github.com/acasadom/trebol-uk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acasadom/trebol-uk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/acasadom/trebol-uk/issues"
+  },
   "license": "Apache-2.0",
   "trebol": "uk.trb",
   "files": [
@@ -17,9 +25,15 @@
     "LICENSE"
   ],
   "peerDependencies": {
-    "trebol": ">0.1.2"
+    "trebol": ">=0.2.0"
   },
   "scripts": {
     "test": "trebol test uk.test.trb && trebol check uk.trb"
+  },
+  "devDependencies": {
+    "trebol": "^0.2.0"
+  },
+  "engines": {
+    "node": ">=22.18"
   }
 }
