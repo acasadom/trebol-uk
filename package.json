@@ -1,0 +1,25 @@
+{
+  "name": "trebol-uk",
+  "version": "0.1.0",
+  "description": "UK rules for Trebol forms: postcodes and National Insurance numbers",
+  "keywords": [
+    "trebol",
+    "uk",
+    "postcode",
+    "national-insurance",
+    "validation"
+  ],
+  "license": "Apache-2.0",
+  "trebol": "uk.trb",
+  "files": [
+    "uk.trb",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "trebol": ">0.1.2"
+  },
+  "scripts": {
+    "test": "trebol test uk.test.trb && trebol check uk.trb"
+  }
+}

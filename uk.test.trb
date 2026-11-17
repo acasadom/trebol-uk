@@ -1,0 +1,42 @@
+Trebol [
+    title: "The rules of trebol-uk"
+    app: none
+]
+
+import %uk.trb
+
+"postcode"
+[postcode? "SW1A 1AA"]
+[postcode? "sw1a1aa"]
+[postcode? "M1 1AE"]
+[postcode? "B33 8TH"]
+[postcode? "CR2 6XH"]
+[postcode? "DN55 1PT"]
+[postcode? "W1A 0AX"]
+[postcode? "EC1A 1BB"]
+[postcode? "GIR 0AA"]
+[not postcode? "QA1 1AA"]
+[not postcode? "AI1 1AA"]
+[not postcode? "SW1A 1CA"]
+[not postcode? "SW1A1A"]
+[not postcode? "1AA"]
+[not postcode? "W1L 0AX"]
+
+"National Insurance number"
+[ni-number? "AB 12 34 56 C"]
+[not ni-number? "QQ 12 34 56 C"]
+[ni-number? "ab123456d"]
+[not ni-number? "AB 12 34 56 E"]
+[not ni-number? "DA123456A"]
+[not ni-number? "AO123456A"]
+[not ni-number? "GB123456A"]
+[not ni-number? "AB12345A"]
+
+"rules of a form"
+[
+    fs: layout/only [field post "Postcode" postcode  field ni "NI number" ni-number]
+    out: collect [
+        foreach [f v] reduce [fs/1 "SW1A 1AA" fs/1 "nope" fs/2 "JG103759A" fs/2 "Q1"] [ui-input f v  keep validate-face f]
+    ]
+    out = reduce [none "Enter a valid postcode" none "Enter a valid National Insurance number"]
+]
